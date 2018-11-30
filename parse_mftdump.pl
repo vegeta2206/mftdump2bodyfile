@@ -4,16 +4,6 @@
 #Daolam Trinh Huu Phap
 #
 #
-#Parses the output of mftdump.exe from the Standard Format to bodyfile format
-#Grab mftdump.exe from #http://malware-hunters.net/all-downloads/
-#Tested with version 2012-09-13 MFTDump V.1.3.0
-#
-#First, create and mftdump output file with mftdump.exe downloaded from malware-hunters using the syntax:
-#	mftdump.exe /d /l /m <hostname> /o <output filename> /v <Extracted $MFT>
-#
-#Then run this tool over the mft_output.txt to create a bodyfile
-#       parse_mftdump.pl C:/path/to/mft_output.txt >> C:/path/to/bodyfile.txt
-#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
