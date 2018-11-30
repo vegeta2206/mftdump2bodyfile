@@ -29,6 +29,7 @@ sub getUnixTime() {
 }
 
 open(MFTDUMPFILE, "<$ARGV[0]") or die "Unable to read MFTDump file ! \n";
+open(BODYFILE, ">$ARGV[0].bodyfile") or die "Unable to write MFTDump file ! \n";
 
 =begin comment
 =end comment
@@ -117,7 +118,7 @@ while($line=<MFTDUMPFILE>) {
 		#print "0|$FullPath|0|0|0|0|0|$ActualSize|$siAccessTimeUTC|$siModTimeUTC|$siMFTModTimeUTC|$siCreateTimeUTC\n";
 
 		# FN Infos
-		print "0|$FullPath|0|0|0|0|$ActualSize|$fnAccessTimeUTC|$fnModTimeUTC|$fnMFTModTimeUTC|$fnCreateTimeUTC\n";
+		print BODYFILE "0|$FullPath|0|0|0|0|$ActualSize|$fnAccessTimeUTC|$fnModTimeUTC|$fnMFTModTimeUTC|$fnCreateTimeUTC\n";
 
 	}
 
@@ -125,5 +126,5 @@ while($line=<MFTDUMPFILE>) {
 
 } #end while
 close(MFTDUMPFILE);
-
+close(BODYFILE);
 
